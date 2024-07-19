@@ -3,6 +3,7 @@
 #include "LED.h"
 #include "ServoMotor.h"
 #include "StepperMotor.h"
+#include "config.h"
 
 extern LED led;
 extern ServoMotor servoMotor;
@@ -20,7 +21,12 @@ void handleWebSocketMessage(void *arg, uint8_t *data, size_t len) {
     data[len] = 0;
     String message = (char *)data;
    JsonDocument doc;
-    deserializeJson(doc, message);
+     DeserializationError error = deserializeJson(doc, message);
+    if (error) {
+      Serial.print(F("deserializeJson() failed: "));
+      Serial.println(error.c_str());
+      return;
+    }
      if (doc.containsKey(LED_KEY)) {
       led.setColor(doc[LED_KEY]["r"], doc[LED_KEY]["g"], doc[LED_KEY]["b"]);
     }

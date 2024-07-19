@@ -2,29 +2,29 @@
 #define CONFIG_H
 
 // WiFi configuration
-const char *SSID = "your_SSID";
-const char *PASSWORD = "your_PASSWORD";
+#define SSID "your_SSID"
+#define PASSWORD "your_PASSWORD"
 
 // Access Point configuration
-const char *AP_SSID = "ESP8266_AP";
-const char *AP_PASSWORD = "your_AP_PASSWORD";
+#define AP_SSID "ESP8266_AP"
+#define AP_PASSWORD "your_AP_PASSWORD"
 
 // Pin configuration
-const int LDR_PIN = A0;
-const int LED_PIN = D2;
-const int SERVO_PIN = D5;
-const int POTENTIOMETER_PIN = 1;
-const int STEPPER_PIN1 = D6;
-const int STEPPER_PIN2 = D7;
-const int STEPPER_PIN3 = D8;
-const int STEPPER_PIN4 = D9;
+#define LDR_PIN A0 // ESP8266 typically has a single ADC pin labeled A0
+#define LED_PIN D1
+#define SERVO_PIN D2
+#define POTENTIOMETER_PIN A0
+#define STEPPER_PIN1 D5
+#define STEPPER_PIN2 D6
+#define STEPPER_PIN3 D7
+#define STEPPER_PIN4 D8
 
 // JSON Keys
-const char *LDR_KEY = "ldr";
-const char *LED_KEY = "led";
-const char *SERVO_KEY = "servo";
-const char *POTENTIOMETER_KEY = "potentiometer";
-const char *STEPPER_KEY = "stepper";
-const char *ERROR_KEY = "error";
+#define LDR_KEY "ldr"
+#define LED_KEY "led"
+#define SERVO_KEY "servo"
+#define POTENTIOMETER_KEY "potentiometer"
+#define STEPPER_KEY "stepper"
+#define ERROR_KEY "error"
 
 #endif // CONFIG_H
